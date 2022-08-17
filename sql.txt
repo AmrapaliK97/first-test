@@ -1,0 +1,207 @@
+customer
+
+cid :=> varchar 20
+cname :=> char 30
+email :=> varchar
+amount :=> varchar 3
+address :=> char 200
+
+
+create table customer
+(
+cid varchar(20),
+cname char(30),
+email varchar(30),
+amount varchar(10),
+address char(200)
+);
+
+:=>
+
+how to add the data into the table :=>
+
+syntax :=>
+
+insert into table_name values(v1,v2,v3,v4...............);
+
+example :=>
+
+insert into customer values('11','test','test@test.com','20','Test address');
+
+select cid,cname,email,amount,address from customer;
+
+
+17/7
+
+
+ 
+
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Cardinal','Tom B. Erichsen','Skagen 21','Stavanger','4006','Norway');
+
+
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Wilman Kala','Tom B. Erichsen','Hello 21','california','4007','Maxico');
+
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Wilman Kala','Tom B. Erichsen','Hello 21','california','4007','Maxico');
+
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Michle','William','Hello 55','WDC','4009','Maxico');
+
+
+
+
+
+
+
+select * from Customers where Country = 'Maxico';
+
+b.) and :=> when our all the condition is true then it will select the record
+
+1.) when i have to select the record where the country is Maxico and city is california.
+
+
+select * from Customers where Country = 'Maxico' and City = 'california';
+
+select * from Customers where Country = 'UK' and City = 'california';
+
+c.) or :=> when anyone of the condition is trur it will select that record.
+
+select * from Customers where Country = 'Norway' or City = 'california';
+
+
+
+
+6.) can you give those record where gdp is in between 20 to 31;
+
+select * from cst where gdp between 20 and 31;
+
+select gdp*50 from cst;
+select gdp+50 from cst;
+
+
+7.) can you give me the data only where state is bihar and karnataka
+
+IN('value1','value2',...........).
+
+
+
+SELECT * FROM cst WHERE state_name IN ('bihar', 'karnataka');
+SELECT * FROM cst WHERE state_name NOT IN ('bihar', 'karnataka');
+SELECT * FROM cst WHERE gdp IN (21,31);
+
+8.) need to see only few records
+
+LIMIT
+
+select * from cst limit 5;
+select * from cst limit 2;
+
+
+9.) can you please arrange the data using column gdp with ascending order
+
+order by
+
+select * from cst order by gdp;
+select * from cst order by gdp desc;
+
+
+
+
+pattern matching
+
+LIKE
+
+a.) can you please tell me city name which is starting from 'a' ?
+
+select * from cst where city_name LIKE 'a%';
+
+b.) can you please tell me city_name which is ending with a ?
+
+select * from cst where city_name LIKE '%a';
+
+c.) can you please tell me the state_name where ar is present ?
+
+select * from cst where state_name LIKE '%ar%';
+
+% :=> one or many character
+_ :=> only one character
+
+d.) can you please tell me the state_name where it is having a in second position ?
+
+
+
+
+
+
+a.) avg
+
+select avg(gdp) from cst;
+
+b.) sum
+
+select sum(gdp) from cst;
+
+c.) MAX
+
+select max(gdp) from cst;
+
+d.) min
+
+select min(gdp) from cst;
+
+select * from cst where state_name LIKE '_a%';
+
+
+
+
+but with the group you need to use aggegate functions.
+
+select sum(gdp) from cst;
+
+a.) select state_name,sum(gdp) from cst group by state_name;
+
+b.) select state_name , max(gdp) from cst group by state_name;
+
+c.) select state_name , max(gdp) as max_gdp_data from cst group by state_name order by max_gdp_data;
+
+
+IMP QUE 
+
+1) DIFF BTWN CONCAT AND CONCAT_WS
+
+2) which concept replacement for join
+
+3)which query executed first
+
+4) which join is faster,left or inner
+
+5)major difference between drop and truncate
+
+6) which gives all data,group by or partition by
+
+7)how group by is different from partition by
+
+8)which fn is used to populate row?
+
+9) difference between rank and dense rank?
+
+10.) which function is used to return the non-null First value from the list ?
+
+Write a SQL query to find the salaries of all employees
+Write a SQL query to find the unique designations of the employees. Return job name.
+write a SQL query to list the employees’ name, increased their salary by 15%, and expressed as number of Dollars.
+Write a SQL query to list the employee's name and job name as the format of "Employee & Job".
+Write a SQL query to find those employees with the hire date in a format like February 22, 1991. Return employee ID, employee name, salary, and hire date.
+Write a SQL query to count the number of characters except for the spaces for each employee name. Return employee name length.
+Write a SQL query to find the employee ID, salary, and commission of all the employees. 
+Write a SQL query to find the unique department with jobs. Return department ID, Job name. 
+Write a SQL query to find those employees who joined before 1991. Return complete information about the employees.
+Write a SQL query to compute the average salary of those employees who work as ‘shipping clerk’. Return average salary.
+
+# JOINS 
+https://medium.com/@hitesh.d.dsouza/what-is-the-difference-between-natural-join-and-equijoin-in-database-fffede1510b8
+
+
+
